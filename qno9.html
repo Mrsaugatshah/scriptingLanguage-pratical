@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <h2>Contact Form</h2>
+
+    <form onsubmit="return validateForm();">
+      <!-- HTML inline validation -->
+      Title:
+      <input type="text" id="title" required />
+      <br /><br />
+
+      Email:
+      <input type="email" id="email" required />
+      <br /><br />
+
+      Phone:
+      <input
+        type="text"
+        id="phone"
+        required
+        pattern="[0-9]{10}"
+        title="Enter 10 digit phone number"
+      />
+      <br /><br />
+
+      Content:
+      <textarea id="content" required></textarea>
+      <br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      function validateForm() {
+        let phone = document.getElementById("phone").value;
+
+        // Regular Expression for 10 digit phone number
+        let phonePattern = /^[0-9]{10}$/;
+
+        if (!phonePattern.test(phone)) {
+          alert("Phone number must contain 10 digits");
+          return false;
+        }
+
+        alert("Form submitted successfully!");
+        return true;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Cookie CRUD</title>
+  </head>
+  <body>
+    <h2>JavaScript Cookie CRUD</h2>
+
+    <input type="text" id="username" placeholder="Enter Username" />
+
+    <button onclick="createCookie()">Create</button>
+    <button onclick="readCookie()">Read</button>
+    <button onclick="updateCookie()">Update</button>
+    <button onclick="deleteCookie()">Delete</button>
+
+    <p id="result"></p>
+
+    <script>
+      // CREATE: Store username in cookie
+      function createCookie() {
+        let name = document.getElementById("username").value;
+
+        document.cookie = "username=" + name + "; max-age=3600";
+        alert("Cookie Created");
+      }
+
+      // READ: Display cookie value
+      function readCookie() {
+        document.getElementById("result").innerHTML = document.cookie;
+      }
+
+      // UPDATE: Change cookie value
+      function updateCookie() {
+        let name = document.getElementById("username").value;
+
+        document.cookie = "username=" + name + "; max-age=3600";
+        alert("Cookie Updated");
+      }
+
+      // DELETE: Remove cookie
+      function deleteCookie() {
+        document.cookie = "username=; max-age=0";
+        document.getElementById("result").innerHTML = "Cookie Deleted";
+      }
+    </script>
+  </body>
+</html>

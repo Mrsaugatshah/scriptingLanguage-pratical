@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Browser, Window and Frame Methods</title>
+  </head>
+  <body>
+    <h2>JavaScript Browser, Window and Frame Interaction</h2>
+
+    <!-- Browser Interaction -->
+    <h3>Browser Information</h3>
+
+    <button onclick="showBrowserInfo()">Show Browser Information</button>
+    <button onclick="goBack()">Go Back</button>
+    <button onclick="goForward()">Go Forward</button>
+    <button onclick="reloadPage()">Reload Page</button>
+
+    <p id="browserInfo"></p>
+
+    <!-- Window Interaction -->
+    <h3>Window Interaction</h3>
+
+    <button onclick="openWindow()">Open New Window</button>
+    <button onclick="closeWindow()">Close New Window</button>
+    <button onclick="resizeWindow()">Resize Window</button>
+    <button onclick="moveWindow()">Move Window</button>
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="showConfirm()">Show Confirm</button>
+    <button onclick="showPrompt()">Show Prompt</button>
+
+    <!-- Frame Interaction -->
+    <h3>Frame Interaction</h3>
+
+    <iframe id="myFrame" src="https://example.com" width="500" height="200">
+    </iframe>
+
+    <br /><br />
+
+    <button onclick="reloadFrame()">Reload Frame</button>
+
+    <script>
+      // ================================
+      // BROWSER INTERACTION
+      // ================================
+
+      // Displays information about the browser
+      function showBrowserInfo() {
+        let info = "";
+
+        // navigator.userAgent gives information about the browser
+        info += "Browser Information: " + navigator.userAgent + "<br>";
+
+        // navigator.language gives the browser language
+        info += "Language: " + navigator.language + "<br>";
+
+        // navigator.platform gives information about the operating system
+        info += "Platform: " + navigator.platform + "<br>";
+
+        // navigator.onLine checks whether the browser is online
+        info += "Online: " + navigator.onLine;
+
+        document.getElementById("browserInfo").innerHTML = info;
+      }
+
+      // Goes to the previous page
+      function goBack() {
+        history.back();
+      }
+
+      // Goes to the next page
+      function goForward() {
+        history.forward();
+      }
+
+      // Reloads the current page
+      function reloadPage() {
+        location.reload();
+      }
+
+      // ================================
+      // WINDOW INTERACTION
+      // ================================
+
+      let newWindow;
+
+      // Opens a new browser window
+      function openWindow() {
+        newWindow = window.open(
+          "https://www.google.com",
+          "_blank",
+          "width=600,height=400",
+        );
+      }
+
+      // Closes the newly opened window
+      function closeWindow() {
+        if (newWindow) {
+          newWindow.close();
+        }
+      }
+
+      // Resizes the current window
+      function resizeWindow() {
+        window.resizeTo(800, 600);
+      }
+
+      // Moves the current window
+      function moveWindow() {
+        window.moveTo(100, 100);
+      }
+
+      // Displays an alert box
+      function showAlert() {
+        window.alert("Hello! This is an Alert Box.");
+      }
+
+      // Displays a confirmation box
+      function showConfirm() {
+        let result = window.confirm("Do you want to continue?");
+
+        if (result) {
+          alert("You clicked OK.");
+        } else {
+          alert("You clicked Cancel.");
+        }
+      }
+
+      // Displays an input box
+      function showPrompt() {
+        let name = window.prompt("Enter your name:");
+
+        if (name != null) {
+          alert("Hello " + name);
+        }
+      }
+
+      // ================================
+      // FRAME INTERACTION
+      // ================================
+
+      // Reloads the iframe
+      function reloadFrame() {
+        let frame = document.getElementById("myFrame");
+
+        frame.src = frame.src;
+      }
+    </script>
+  </body>
+</html>

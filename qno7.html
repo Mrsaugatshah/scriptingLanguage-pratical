@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>DOM Example</title>
+  </head>
+  <body>
+    <h2 id="title">Student Result</h2>
+
+    <input type="text" id="name" placeholder="Enter Name" />
+    <input type="number" id="marks" placeholder="Enter Marks" />
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+      // Get values from HTML elements using DOM
+      function calculate() {
+        let name = document.getElementById("name").value;
+        let marks = Number(document.getElementById("marks").value);
+
+        let grade;
+
+        // Calculate grade
+        if (marks >= 80) grade = "A";
+        else if (marks >= 60) grade = "B";
+        else if (marks >= 40) grade = "C";
+        else grade = "F";
+
+        // Modify HTML content using DOM
+        document.getElementById("result").innerHTML =
+          "Name: " + name + "<br>Grade: " + grade;
+
+        // Modify style using DOM
+        document.getElementById("result").style.color = "green";
+      }
+    </script>
+  </body>
+</html>
