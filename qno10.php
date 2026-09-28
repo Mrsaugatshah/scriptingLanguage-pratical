@@ -1,4 +1,4 @@
-# Practical: Basic PHP Program Using XAMPP
+<!-- # Practical: Basic PHP Program Using XAMPP
 
 ## Installation Steps
 
@@ -11,7 +11,7 @@
 
 ## PHP Code
 
-```php
+```php -->
 <?php
 $a = 10;
 $b = 20;
@@ -20,7 +20,7 @@ $sum = $a + $b;
 
 echo "Sum = " . $sum;
 ?>
-```
+<!-- ```
 
 ## Execution Steps
 
@@ -37,4 +37,4 @@ http://localhost/phpdemo/
 
 ```text
 Sum = 30
-```
+``` -->

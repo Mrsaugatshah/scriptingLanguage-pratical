@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>jQuery Events</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+
+  <body>
+    <h2 id="title">qno17 jQuery Event Demo</h2>
+
+    <button id="btn">Click Me</button>
+
+    <p id="msg">Hello! Try the button.</p>
+
+    <input type="text" id="name" placeholder="Type something" />
+
+    <script>
+      $(document).ready(function () {
+        // Click event
+        $("#btn").click(function () {
+          $("#msg").text("Button Clicked!");
+        });
+
+        // Mouse event
+        $("#title").mouseenter(function () {
+          $(this).css("color", "red");
+        });
+
+        // Keyboard event
+        $("#name").keyup(function () {
+          $("#msg").text("You typed: " + $(this).val());
+        });
+      });
+    </script>
+  </body>
+</html>
